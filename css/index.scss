@@ -1,0 +1,168 @@
+@charset "utf-8";
+@import "mainbox";
+
+// 노토산스 폰트
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+// 잘난 폰트
+@font-face {
+  font-family: "Jalnan";
+  font-weight: normal;
+  src: url(../font/Jalnan2TTF.ttf) format("truetype");
+}
+
+$f_family : "Jalnan", "맑은고딕", arial;
+$black : #333;
+$white : #FFFFFF;
+$beige : #FFFAE4;
+$l_gray : #AAAAAA;
+$red : #ED504F;
+$green : #37AC80;
+$blue : #177496;
+
+html{
+  font-family: $f_family;
+  overflow: hidden;
+}
+body{
+  font-size: 18px;
+  overflow: hidden;
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  #pc {display: none;}
+}
+@media screen and (min-width: 1024px) {
+  #mobile {display: none;}
+}
+
+.loadingWrap {
+  width: 100vw; height: 100vh;
+  width: 100svw; height: 100svh;
+  background: #FFFAE4;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+}
+
+.loadingText span {
+  font-size: 2rem;
+  display: inline-block;
+  padding: 0.5rem;
+  position: relative;
+  animation: loadingText 2s cubic-bezier(0.25, 0.25, 0.75, 0.75) infinite;
+}
+.loadingText span:nth-child(1){animation-delay: 0;}
+.loadingText span:nth-child(2){animation-delay: 0.2857s;}
+.loadingText span:nth-child(3){animation-delay: 0.5714s;}
+.loadingText span:nth-child(4){animation-delay: 0.8571s;}
+.loadingText span:nth-child(5){animation-delay: 1.1428s;}
+.loadingText span:nth-child(6){animation-delay: 1.4285s;}
+.loadingText span:nth-child(7){animation-delay: 1.7142s;}
+@keyframes loadingText {
+    20% { transform: translateY(-1rem); }
+    40% { transform: translateY(0rem); }
+}
+
+.progress {
+  position: relative;
+  width: 320px; height: 30px;
+  margin-top: 1rem;
+  & > div {
+    position: absolute;
+    left: 0;
+    width: 100%; height: 100%;
+  }
+  .progressBack {
+    background: #EEEEEE;
+    box-shadow: inset -4px -4px 0px rgba(255,255,255,0.3), inset 4px 4px 0px rgba(0,0,0,0.1);
+  }
+  .progressFull {
+    background: $green;
+    width: 100%;
+    box-shadow: inset 4px 4px 0px rgba(255,255,255,0.3), inset -4px -4px 0px rgba(0,0,0,0.1);
+    animation: progress 4s ease-in-out;
+  }
+  @keyframes progress {
+    0% {width: 0%;}
+    100% {width: 100%;}
+  }
+}
+
+.subText {
+  text-align: center;
+  margin-top: 2rem;
+  line-height: 160%;
+}
+.countText::after {
+  content: "0";
+  animation: countText 4s linear;
+}
+@keyframes countText {
+  0% {content: "4";}
+  25% {content: "3";}
+  50% {content: "2";}
+  75% {content: "1";}
+  100% {content: "0";}
+}
+
+.reload {
+  display: none;
+  background: transparent;
+  outline: none; border: none;
+  font-family: $f_family;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  background: #FFFFFF;
+  border-radius: 2rem;
+  box-shadow: 3px 3px 0px rgba(222, 158, 84, 0.6);
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    background: #EFD7A7;
+    box-shadow: rgba(222, 158, 84, 0.6) 3px 3px 0px 0px inset;
+  }
+  &.on {display: inline-block;}
+}
+
+#mobile {
+  width: 100vw; height: 100vh;
+  width: 100svw; height: 100svh;
+  background: #FFFAE4;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center;
+  line-height: 160%;
+}
+.mobileText span {
+  font-size: 2rem;
+  display: inline-block;
+  padding: 0.5rem;
+  position: relative;
+  animation: loadingText 2s cubic-bezier(0.25, 0.25, 0.75, 0.75) infinite;
+  margin-bottom: 2rem;
+}
+.mobileText span:nth-child(1){animation-delay: 0;}
+.mobileText span:nth-child(2){animation-delay: 0.2857s;}
+.mobileText span:nth-child(3){animation-delay: 0.5714s;}
+.mobileText span:nth-child(4){animation-delay: 0.8571s;}
+.mobileText span:nth-child(5){animation-delay: 1.1428s;}
+.mobileText span:nth-child(6){animation-delay: 1.4285s;}
+.mobileText span:nth-child(7){animation-delay: 1.7142s;}
+
+.notion {
+  background: transparent;
+  outline: none; border: none;
+  font-family: $f_family;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 2rem;
+  background: #EFD7A7;
+  box-shadow: rgba(222, 158, 84, 0.6) 3px 3px 0px 0px inset;
+  transition: 0.3s;
+  cursor: pointer;
+}

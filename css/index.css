@@ -1,0 +1,343 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+main > div {
+  width: 1920px;
+  height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+}
+main .main_title {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+}
+main .main_title img:first-of-type {
+  width: 100%;
+  object-fit: cover;
+}
+main .main_title img:last-of-type {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform-origin: top center;
+  transform: translateX(-50%) rotate(20deg);
+  width: 100px;
+  object-fit: cover;
+  animation: title_lamp 1.5s ease-in-out infinite;
+}
+@keyframes title_lamp {
+  0% {
+    transform: translateX(-50%) rotate(20deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(-20deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(20deg);
+  }
+}
+@media screen and (max-width: 1024px) {
+  main .main_title {
+    left: 10%;
+    width: 300px;
+  }
+  main .main_title img:last-of-type {
+    width: 50px;
+    top: 50px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  main .main_title {
+    top: 60%;
+  }
+}
+main div > .house_img {
+  position: absolute;
+  z-index: 2;
+  bottom: 170px;
+  left: 51%;
+  transform: translateX(-50%);
+  width: 70vh;
+  height: 70vh;
+  background-size: 350vh 70vh;
+  animation: header_move70 2s steps(5) infinite;
+}
+main div > #house1 {
+  background-image: url("../images/profile_house.svg");
+}
+main div > #house2 {
+  background-image: url("../images/skill_house.svg");
+}
+main div > #house3 {
+  background-image: url("../images/project_house.svg");
+}
+main div > #house4 {
+  top: 30vh;
+  scale: 0.5;
+  background-image: url("../images/contact_house_l.svg");
+}
+main .modal {
+  display: none;
+  z-index: 100;
+  width: 200vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  font-size: 50px;
+}
+main .modal_back {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  background: #000;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  border: none;
+}
+
+@font-face {
+  font-family: "Jalnan";
+  font-weight: normal;
+  src: url(../font/Jalnan2TTF.ttf) format("truetype");
+}
+html {
+  font-family: "Jalnan", "맑은고딕", arial;
+  overflow: hidden;
+}
+
+body {
+  font-size: 18px;
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  #pc {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #mobile {
+    display: none;
+  }
+}
+.loadingWrap {
+  width: 100vw;
+  height: 100vh;
+  width: 100svw;
+  height: 100svh;
+  background: #FFFAE4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingText span {
+  font-size: 2rem;
+  display: inline-block;
+  padding: 0.5rem;
+  position: relative;
+  animation: loadingText 2s cubic-bezier(0.25, 0.25, 0.75, 0.75) infinite;
+}
+
+.loadingText span:nth-child(1) {
+  animation-delay: 0;
+}
+
+.loadingText span:nth-child(2) {
+  animation-delay: 0.2857s;
+}
+
+.loadingText span:nth-child(3) {
+  animation-delay: 0.5714s;
+}
+
+.loadingText span:nth-child(4) {
+  animation-delay: 0.8571s;
+}
+
+.loadingText span:nth-child(5) {
+  animation-delay: 1.1428s;
+}
+
+.loadingText span:nth-child(6) {
+  animation-delay: 1.4285s;
+}
+
+.loadingText span:nth-child(7) {
+  animation-delay: 1.7142s;
+}
+
+@keyframes loadingText {
+  20% {
+    transform: translateY(-1rem);
+  }
+  40% {
+    transform: translateY(0rem);
+  }
+}
+.progress {
+  position: relative;
+  width: 320px;
+  height: 30px;
+  margin-top: 1rem;
+}
+.progress > div {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.progress .progressBack {
+  background: #EEEEEE;
+  box-shadow: inset -4px -4px 0px rgba(255, 255, 255, 0.3), inset 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+.progress .progressFull {
+  background: #37AC80;
+  width: 100%;
+  box-shadow: inset 4px 4px 0px rgba(255, 255, 255, 0.3), inset -4px -4px 0px rgba(0, 0, 0, 0.1);
+  animation: progress 4s ease-in-out;
+}
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.subText {
+  text-align: center;
+  margin-top: 2rem;
+  line-height: 160%;
+}
+
+.countText::after {
+  content: "0";
+  animation: countText 4s linear;
+}
+
+@keyframes countText {
+  0% {
+    content: "4";
+  }
+  25% {
+    content: "3";
+  }
+  50% {
+    content: "2";
+  }
+  75% {
+    content: "1";
+  }
+  100% {
+    content: "0";
+  }
+}
+.reload {
+  display: none;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-family: "Jalnan", "맑은고딕", arial;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  background: #FFFFFF;
+  border-radius: 2rem;
+  box-shadow: 3px 3px 0px rgba(222, 158, 84, 0.6);
+  transition: 0.3s;
+  cursor: pointer;
+}
+.reload:hover {
+  background: #EFD7A7;
+  box-shadow: rgba(222, 158, 84, 0.6) 3px 3px 0px 0px inset;
+}
+.reload.on {
+  display: inline-block;
+}
+
+#mobile {
+  width: 100vw;
+  height: 100vh;
+  width: 100svw;
+  height: 100svh;
+  background: #FFFAE4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 160%;
+}
+
+.mobileText span {
+  font-size: 2rem;
+  display: inline-block;
+  padding: 0.5rem;
+  position: relative;
+  animation: loadingText 2s cubic-bezier(0.25, 0.25, 0.75, 0.75) infinite;
+  margin-bottom: 2rem;
+}
+
+.mobileText span:nth-child(1) {
+  animation-delay: 0;
+}
+
+.mobileText span:nth-child(2) {
+  animation-delay: 0.2857s;
+}
+
+.mobileText span:nth-child(3) {
+  animation-delay: 0.5714s;
+}
+
+.mobileText span:nth-child(4) {
+  animation-delay: 0.8571s;
+}
+
+.mobileText span:nth-child(5) {
+  animation-delay: 1.1428s;
+}
+
+.mobileText span:nth-child(6) {
+  animation-delay: 1.4285s;
+}
+
+.mobileText span:nth-child(7) {
+  animation-delay: 1.7142s;
+}
+
+.notion {
+  background: transparent;
+  outline: none;
+  border: none;
+  font-family: "Jalnan", "맑은고딕", arial;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 2rem;
+  background: #EFD7A7;
+  box-shadow: rgba(222, 158, 84, 0.6) 3px 3px 0px 0px inset;
+  transition: 0.3s;
+  cursor: pointer;
+}

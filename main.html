@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>김지수의 포트폴리오</title>
+  <!-- 파비콘 -->
+  <link rel="shortcut icon" type="image/svg" href="images/favicon.svg">
+  <!-- 초기화 -->
+  <link rel="stylesheet" href="css/reset.css" type="text/css">
+  <!-- 폰트어썸 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- 메인css -->
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+</head>
+<body>
+  <!-- 헤더 -->
+  <header>
+    <!-- 코인 -->
+    <div class="coin_box">
+      <p class="coin_text">0</p>
+      <div class="coin"></div>
+    </div>
+    <!-- 맵 -->
+    <div class="right_box map_box">
+      <p class="map">Map</p>
+      <div class="map_icon"></div>
+    </div>
+    <!-- 보관함 -->
+    <div class="right_box storage_box">
+      <p class="storege">Storage</p>
+      <div class="storage_icon"></div>
+    </div>
+    <!-- 사용설명 -->
+    <div class="right_box help_box">
+      <p class="help">Help</p>
+      <div class="help_icon"></div>
+    </div>
+    <!-- 잔디밭 -->
+    <div class="ground"></div>
+    <!-- 별 -->
+    <div class="starmove">
+      <img src="images/starmove.svg" alt="별똥별" class="starmove1">
+      <img src="images/starmove.svg" alt="별똥별" class="starmove2">
+      <img src="images/starmove.svg" alt="별똥별" class="starmove3">
+    </div>
+    <div class="star_box">
+      <img src="images/star1.svg" alt="별">
+      <img src="images/star2.svg" alt="별">
+    </div>
+    <!-- 달 -->
+    <div class="moon_box"><img src="images/moon.svg" alt="달" class="moon"></div>
+    <!-- 해 -->
+    <div class="sun_box"><img src="images/sun.svg" alt="해" class="sun"></div>
+    <!-- 캐릭터 -->
+    <div class="char_img"></div>
+    
+    <!-- 지도 모달 -->
+    <div class="map_modal">
+      <!-- 제목 -->
+      <h3 class="modal_title">Map</h3>
+      <!-- 닫기 아이콘 -->
+      <i class="fas fa-door-open map_close modal_close" style="cursor: url('images/cursor.png') 1 1, auto;"></i>
+      <!-- 지도모양 -->
+      <div class="spot_box">
+        <img src="./images/map_ground.svg" alt="지도" class="map_back">
+        <a href="#" title="프로필로 가기" class="map_location" id="maps1">
+          <img src="./images/house1.svg" alt="프로필">
+          <span>Profile</span>
+        </a>
+        <a href="#" title="스킬로 가기" class="map_location" id="maps2">
+          <img src="./images/house2.svg" alt="스킬">
+          <span>Skills</span>
+        </a>
+        <a href="#" title="프로젝트로 가기" class="map_location" id="maps3">
+          <img src="./images/house3.svg" alt="프로젝트">
+          <span>Project</span>
+        </a>
+        <a href="#" title="콘택트로 가기" class="map_location" id="maps4">
+          <img src="./images/house4.svg" alt="콘택트">
+          <span>Contact</span>
+        </a>
+        <div class="map_pic"></div>
+      </div>
+      <div class="map_r_box">
+        <div class="r_icon r_profile" id="map1"></div>
+        <div class="r_icon r_skills" id="map2"></div>
+        <div class="r_icon r_project" id="map3"></div>
+        <div class="r_icon r_contact" id="map4"></div>
+      </div>
+    </div>
+    <!-- 스토리지 모달 -->
+    <div class="storage_modal">
+      <!-- 제목 -->
+      <h3 class="modal_title">Storage</h3>      
+      <!-- 닫기 아이콘 -->
+      <i class="fas fa-door-open storage_close modal_close" style="cursor: url('images/cursor.png') 1 1, auto;"></i>
+      <!-- 스토리지 -->
+      <div class="modal_inner">
+        <img src="images/bubble_back.png" alt="">
+        <div class="storage_item">
+          <a href="#" id="phone" title="연락처" class="importance"><img src="images/storage_item1.svg" alt="연락처"><span class="bubble st_import">연락처</span></a>
+          <a href="#" title="모종삽"><img src="images/storage_item2.svg" alt="모종삽"><span class="bubble">모종삽</span></a>
+          <a href="#" id="github" title="깃허브" class="importance"><img src="images/storage_item3.svg" alt="깃허브"><span class="bubble st_import">깃허브</span></a>
+          <a href="#" title="나침반"><img src="images/storage_item4.svg" alt="나침반"><span class="bubble">나침반</span></a>
+          <a href="#" title="휘핑기"><img src="images/storage_item5.svg" alt="휘핑기"><span class="bubble">휘핑기</span></a>
+          <a href="#" title="사탕"><img src="images/storage_item6.svg" alt="사탕"><span class="bubble">사탕</span></a>
+          <a href="#" id="mail" title="이메일" class="importance"><img src="images/storage_item7.svg" alt="이메일"><span class="bubble st_import">이메일</span></a>
+          <a href="#" title="빵"><img src="images/storage_item8.svg" alt="빵"><span class="bubble">빵</span></a>
+          <a href="#" title="모자"><img src="images/storage_item9.svg" alt="모자"><span class="bubble">모자</span></a>
+          <a href="#" id="letter" title="편지" class="importance"><img src="images/storage_item10.svg" alt="편지"><span class="bubble st_import">편지</span></a>
+          <a href="#" title="마이크"><img src="images/storage_item11.svg" alt="마이크"><span class="bubble">마이크</span></a>
+          <a href="#" title="왕관"><img src="images/storage_item12.svg" alt="왕관"><span class="bubble">왕관</span></a>
+        </div>
+      </div>
+      <div class="item_modal phone_modal">
+        <div class="item_modal_inner">
+          <p class="title">연락처</p>
+          <p class="text">010-6637-5153</p>
+          <img src="images/storage_item1.svg" alt="연락처 아이콘">
+        </div>
+      </div>
+      <div class="item_modal github_modal">
+        <div class="item_modal_inner">
+          <p class="title">깃허브</p>
+          <p class="text">준비중 ...</p>
+          <img src="images/storage_item3.svg" alt="깃허브 아이콘">
+        </div>
+      </div>
+      <div class="item_modal mail_modal">
+        <div class="item_modal_inner">
+          <p class="title">이메일</p>
+          <p class="text">jbmyellow@naver.com</p>
+          <img src="images/storage_item7.svg" alt="이메일 아이콘">
+        </div>
+      </div>
+      <div class="item_modal letter_modal">
+        <div class="item_modal_inner">
+          <p class="title">편지</p>
+          <p class="text">준비중 ...</p>
+          <img src="images/storage_item10.svg" alt="편지 아이콘">
+        </div>
+      </div>
+    </div>
+    <!-- 도움말 모달 -->
+    <div class="help_modal">
+      <div class="help_inner h_coin"></div>
+      <div class="help_inner h_map"></div>
+      <div class="help_inner h_storage"></div>
+      <div class="help_inner h_help"></div>
+    </div>
+    <!-- 도움말 텍스트 모달 -->
+    <div class="help_text_modal">
+      <p class="coin_text_box">이동 거리 표시</p>
+      <p class="map_text">현재 위치 확인 및<br>위치 이동</p>
+      <p class="storage_text">개발자 정보 확인</p>
+      <p class="help_text">이용 방법 설명</p>
+      <div class="mouse">
+        <img src="images/help_mouse.svg" alt="마우스휠">
+        <p style="line-height: 200%;">해당프로젝트는 1920x1080 해상도에 최적화 되어있습니다.<br>스크롤을 하시면 화면이 좌우로 이동합니다.</p>
+      </div>
+      <a href="https://yummy-feta-11c.notion.site/8e1e324bb7814d10b2c3d0d1f90ea744?pvs=4" title="포트폴리오 제작과정 보러가기" class="port_note" target="_blank">포트폴리오 <span>제작과정</span><br>보러가기</a>
+    </div>
+  </header>
+
+  <!-- 메인 -->
+  <main>
+    <!-- 제목 -->
+    <div>
+      <div class="main_title">
+        <img src="images/title.svg" alt="타이틀 이미지">
+        <img src="images/title_lamp.svg" alt="타이틀 램프 이미지">
+      </div>
+    </div>
+
+    <!-- 프로필 -->
+    <div class="box box2">
+      <div class="move_location house_img" id="house1"></div>
+      
+      <!-- 프로필 모달 -->
+      <div class="profile_modal modal1" style="display: none;">
+        <div class="p_character">
+          <div class="char_box"></div>
+        </div>
+
+        <div class="p_text">
+          <svg class="box_background" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" preserveAspectRatio="none"
+            viewBox="0 0 37.5 15.3" style="enable-background:new 0 0 37.5 15.3;" xml:space="preserve">
+            <style type="text/css">
+              .st0{fill:#FFFFFF;}
+            </style>
+            <path class="st0" d="M0.5,5.9C0.4,0,9.2,0.5,16.4,0.5C35.8,0.5,37,1.4,37,8.3c0,6.9-6.2,6.9-21.9,6.3C-0.5,14,0.7,13.2,0.5,5.9z"/>
+          </svg>
+          <p class="my_name">김지수</p>
+          <p class="my_text">
+            안녕하세요, <span>프론트엔드 개발자</span>를 꿈꾸는 김지수입니다.<br>
+            배움에 대한 열정이 있고, 새로운 도전에 대한 두려움이 없는<br>
+            저는 <span>"하면 된다"</span>는 신념으로 어떤 어려움이 닥쳐도<br>
+            포기하지 않고 끊임없이 도전합니다.
+          </p>
+        </div>
+
+        <div class="p_job">
+          <svg class="box_background" version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" preserveAspectRatio="none"
+            viewBox="0 0 37.5 15.3" style="enable-background:new 0 0 37.5 15.3;" xml:space="preserve">
+            <style type="text/css">
+              .st0{fill:#FFFFFF;}
+            </style>
+            <path class="st0" d="M0.5,5.9C0.4,0,9.2,0.5,16.4,0.5C35.8,0.5,37,1.4,37,8.3c0,6.9-6.2,6.9-21.9,6.3C-0.5,14,0.7,13.2,0.5,5.9z"/>
+          </svg>
+          <h2>희망직종</h2>
+          <ul>
+            <li>
+              <div class="img_box profile_act">
+                <img src="images/profile_item1.svg" alt="웹퍼블리셔">
+              </div>
+              <p>웹퍼블리셔</p>
+            </li>
+            <li>&nbsp;</li>
+            <li>
+              <div class="img_box">
+                <img src="images/profile_item2.svg" alt="프론트엔드">
+              </div>
+              <p>프론트엔드</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p_hobby">
+          <svg class="box_background" version="1.1" id="Layer_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" preserveAspectRatio="none"
+            viewBox="0 0 37.5 15.3" style="enable-background:new 0 0 37.5 15.3;" xml:space="preserve">
+            <style type="text/css">
+              .st0{fill:#FFFFFF;}
+            </style>
+            <path class="st0" d="M0.5,5.9C0.4,0,9.2,0.5,16.4,0.5C35.8,0.5,37,1.4,37,8.3c0,6.9-6.2,6.9-21.9,6.3C-0.5,14,0.7,13.2,0.5,5.9z"/>
+          </svg>
+          <h2>취미</h2>
+          <ul>
+            <li>
+              <div class="img_box">
+                <img src="images/profile_item3.svg" alt="게임">
+              </div>
+              <p>게임</p>
+            </li>
+            <li>
+              <div class="img_box profile_act">
+                <img src="images/profile_item4.svg" alt="여행">
+              </div>
+              <p>여행</p>
+            </li>
+            <li>
+              <div class="img_box">
+                <img src="images/profile_item5.svg" alt="사진촬영">
+              </div>
+              <p>사진촬영</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p_license">
+          <svg class="box_background" version="1.1" id="Layer_4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" preserveAspectRatio="none"
+            viewBox="0 0 37.5 15.3" style="enable-background:new 0 0 37.5 15.3;" xml:space="preserve">
+            <style type="text/css">
+              .st0{fill:#FFFFFF;}
+            </style>
+            <path class="st0" d="M0.5,5.9C0.4,0,9.2,0.5,16.4,0.5C35.8,0.5,37,1.4,37,8.3c0,6.9-6.2,6.9-21.9,6.3C-0.5,14,0.7,13.2,0.5,5.9z"/>
+          </svg>
+          <h2>자격증</h2>
+          <ul>
+            <li>
+              <div class="img_box profile_act">
+                <img src="images/profile_item6.svg" alt="웹디자인기능사">
+              </div>
+              <p>웹디자인기능사</p>
+            </li>
+            <li>
+              <div class="img_box">
+                <img src="images/profile_item7.svg" alt="컴퓨터그래픽스운용기능사">
+              </div>
+              <p>컴퓨터그래픽스운용기능사</p>
+            </li>
+            <li>
+              <div class="img_box">
+                <img src="images/profile_item8.svg" alt="전자출판기능사">
+              </div>
+              <p>전자출판기능사</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 닫기 아이콘 -->
+        <i class="fas fa-door-open profile_close modal_close" style="cursor: url('images/cursor.png') 1 1, auto;"></i>
+      </div>
+    </div>
+
+    <!-- 스킬 -->
+    <div class="box box3">
+      <div class="move_location house_img" id="house2"></div>
+
+      <!-- 스킬 모달 -->
+      <div class="skill_box modal2">
+        <div class="box_inner">
+          <h2 class="modal_title">Skills</h2>
+          <div>
+            <div class="s_photoshop">
+              <span>
+                능력<br>90%
+              </span>
+              <img src="images/s_logo1.svg" alt="포토샵 아이콘">
+              <h3>Adobe Photoshop</h3>
+              <ul>
+                <li> 전체 툴에 대한 숙련도 보유</li>
+                <li> 사진 보정 및 합성 작업 가능</li>
+                <li> 웹페이지 디자인 수행 가능</li>
+                <li> UI/UX 디자인 전문성 보유</li>
+                <li> 배너 및 홍보물 디자인 역량 보유</li>
+                <li> 판촉물 및 포스터 디자인 가능</li>
+              </ul>
+            </div>
+            <div class="s_illu">
+              <span>
+                능력<br>85%
+              </span>
+              <img src="images/s_logo2.svg" alt="일러스트 아이콘">
+              <h3>Adobe Illustrator</h3>
+              <ul>
+                <li> 전체 툴에 대한 숙련도 보유</li>
+                <li> CI/BI 및 로고 디자인 가능</li>
+                <li> 아이콘 디자인 역량 보유</li>
+                <li> 트레이싱 라인 드로잉 수행 가능</li>
+                <li> 2D 도식화 디자인 가능</li>
+                <li> 간단한 3D 오브젝트 디자인 가능</li>
+              </ul>
+            </div>
+            <div class="s_lrc">
+              <span>
+                능력<br>70%
+              </span>
+              <img src="images/s_logo3.svg" alt="라이트룸 아이콘">
+              <h3>Adobe Ligntroom Classic</h3>
+              <ul>
+                <li> 기본 툴 숙지</li>
+                <li> 프리셋을 활용한 통일된 보정 가능</li>
+              </ul>
+            </div>
+            <div class="s_figma">
+              <span>
+                능력<br>80%
+              </span>
+              <img src="images/s_logo4.svg" alt="피그마 아이콘">
+              <h3>Figma</h3>
+              <ul>
+                <li> 전체 툴에 대한 숙련도 보유</li>
+                <li> 웹페이지 디자인 수행 가능</li>
+                <li> 오토 레이아웃을 활용한 반응형 컴포넌트 제작 가능</li>
+                <li> 플러그인 활용 가능</li>
+                <li> 프로토타이핑 제작 가능</li>
+              </ul>
+            </div>
+            <div class="s_html">
+              <span>
+                능력<br>90%
+              </span>
+              <img src="images/s_logo5.svg" alt="html 아이콘">
+              <h3>HTML5</h3>
+              <ul>
+                <li> 기본 문법 숙지</li>
+                <li> 시맨틱 태그를 활용한 HTML5 설계 가능</li>
+                <li> 젠코딩(zen coding)을 통한 효율적인 코드 작성 가능</li>
+              </ul>
+            </div>
+            <div class="s_css">
+              <span>
+                능력<br>85%
+              </span>
+              <img src="images/s_logo6.svg" alt="CSS 아이콘">
+              <h3>CSS3</h3>
+              <ul>
+                <li> 기본 문법 숙지</li>
+                <li> 적응형 웹페이지 제작 가능</li>
+                <li> media queries 및 flexbox를 활용한 반응형 웹페이지 디자인 가능</li>
+                <li> animation 속성을 활용한 동적인 웹페이지 제작 가능</li>
+              </ul>
+            </div>
+            <div class="s_sass">
+              <span>
+                능력<br>75%
+              </span>
+              <img src="images/s_logo7.svg" alt="sass 아이콘">
+              <h3>SASS(SCSS)</h3>
+              <ul>
+                <li> 기본문법 숙지</li>
+                <li> 변수, mixin 정의 및 활용 가능</li>
+                <li> 중첩 문법 활용 가능</li>
+              </ul>
+            </div>
+            <div class="s_boot">
+              <span>
+                능력<br>70%
+              </span>
+              <img src="images/s_logo8.svg" alt="부트스트랩 아이콘">
+              <h3>Bootstrap</h3>
+              <ul>
+                <li> 기본문법 숙지</li>
+                <li> CSS와 유사한 방식으로 활용 가능</li>
+              </ul>
+            </div>
+            <div class="s_js">
+              <span>
+                능력<br>50%
+              </span>
+              <img src="images/s_logo9.svg" alt="js 아이콘">
+              <h3>Javascript</h3>
+              <ul>
+                <li> 기본 문법 숙지</li>
+                <li> form 태그의 유효성 검사 수행 가능</li>
+                <li> 제어문 활용 가능</li>
+                <li> 이미지 변경 및 조작 가능</li>
+              </ul>
+            </div>
+            <div class="s_jquery">
+              <span>
+                능력<br>60%
+              </span>
+              <img src="images/s_logo10.svg" alt="제이쿼리 아이콘">
+              <h3>jQuery</h3>
+              <ul>
+                <li> 기본 문법 숙지</li>
+                <li> 내비게이션, 토글 기능 구현 가능</li>
+                <li> 모달 및 탭 메뉴 제작 가능</li>
+                <li> 채팅창 및 탑 버튼 제작 가능</li>
+                <li> 영상 제어 기능 구현 가능</li>
+                <li> 오토 슬라이드 구현 가능</li>
+              </ul>
+            </div>
+            <div class="s_react">
+              <span>
+                능력<br>40%
+              </span>
+              <img src="images/s_logo11.svg" alt="리액트 아이콘">
+              <h3>React</h3>
+              <ul>
+                <li> 기본 문법 숙지</li>
+                <li> 컴포넌트 활용 및 관리</li>
+              </ul>
+            </div>
+            <div class="s_php">
+              <span>
+                능력<br>60%
+              </span>
+              <img src="images/s_logo12.svg" alt="php 아이콘">
+              <h3>PHP / DB(MySQL)</h3>
+              <ul>
+                <li> 테이블 생성, 수정, 삭제 및 검색 등 기본적인 쿼리문 사용 가능</li>
+                <li> PHP 문서를 통해 데이터 출력 가능, 조건문 및 반복문을 활용한 출력 가능</li>
+                <li> MySQL을 이용한 회원관리, 후기관리, 게시판 제작, TodoList 등 기능 구현 가능</li>
+              </ul>
+            </div>
+            <ul>
+              <li id="s_photoshop" class="skill_act">
+                <img src="images/s_logo1.svg" alt="포토샵 아이콘">
+                <p>&nbsp;</p>
+              </li>
+              <li id="s_illu">
+                <img src="images/s_logo2.svg" alt="일러스트 아이콘">
+                <p>&nbsp;</p>
+              </li>
+              <li id="s_lrc">
+                <img src="images/s_logo3.svg" alt="라이트룸클래식 아이콘">
+                <p>&nbsp;</p>
+              </li>
+              <li id="s_figma">
+                <img src="images/s_logo4.svg" alt="피그마 아이콘">
+                <p>&nbsp;</p>
+              </li>
+              <li id="s_html">
+                <img src="images/s_logo5.svg" alt="HTML 아이콘">
+                <p>&nbsp;</p>
+              </li>
+              <li id="s_css">
+                <img src="images/s_logo6.svg" alt="CSS 아이콘">
+                <p>&nbsp;</p>
+              </li>
+              <li id="s_sass">
+                <img src="images/s_logo7.svg" alt="SASS 아이콘">
+                <p>&nbsp;</p>
+              </li>
+              <li id="s_boot">
+                <img src="images/s_logo8.svg" alt="부트스트랩 아이콘">
+                <p>&nbsp;</p>
+              </li>
+              <li id="s_js">
+                <img src="images/s_logo9.svg" alt="JS 아이콘">
+                <p>&nbsp;</p>
+              </li>
+              <li id="s_jquery">
+                <img src="images/s_logo10.svg" alt="제이쿼리 아이콘">
+                <p>&nbsp;</p>
+              </li>
+              <li id="s_react">
+                <img src="images/s_logo11.svg" alt="리액트 아이콘">
+                <p>&nbsp;</p>
+              </li>
+              <li id="s_php">
+                <img src="images/s_logo12.svg" alt="PHP아이콘">
+                <p>&nbsp;</p>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- 닫기 아이콘 -->
+          <i class="fa-solid fa-door-open skill_close modal_close" style="cursor: url('images/cursor.png') 1 1, auto;"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- 프로젝트 -->
+    <div class="box box4">
+      <div class="move_location house_img" id="house3"></div>
+
+      <!-- 프로젝트 모달 -->
+      <div class="project_box modal3">
+        <div class="project_char"></div>
+        <div class="box_inner">
+          <h2 class="modal_title">Project</h2>
+          <div class="frame frame1" id="frame1">
+            <img src="images/frame_img1.svg" alt="프로젝트1">
+            <img src="images/p_frame.svg" alt="프레임이미지">
+          </div>
+          <div class="frame frame2" id="frame2">
+            <img src="images/frame_img2.svg" alt="프로젝트2">
+            <img src="images/p_frame_h.svg" alt="프레임이미지">
+          </div>
+          <div class="frame frame3" id="frame3">
+            <img src="images/frame_img3.svg" alt="프로젝트3">
+            <img src="images/p_frame.svg" alt="프레임이미지">
+          </div>
+          <div class="frame frame4" id="frame4">
+            <img src="images/frame_img4.svg" alt="프로젝트4">
+            <img src="images/p_frame.svg" alt="프레임이미지">
+          </div>
+          <div class="frame frame5" id="frame5">
+            <img src="images/frame_img5.svg" alt="프로젝트5">
+            <img src="images/p_frame.svg" alt="프레임이미지">
+          </div>
+        </div>
+        <div class="barri"></div>
+
+        <!-- 닫기 아이콘 -->
+        <i class="fa-solid fa-door-open project_close modal_close" style="cursor: url('images/cursor.png') 1 1, auto;"></i>
+      </div>
+
+      <!-- 프로젝트 모달의 모달 -->
+      <div class="p_inner_modal p_modal1">
+        <img src="images/frame_img1.svg" alt="프로젝트이미지">
+        <div class="p_text_main">
+          <div class="corner">&nbsp;</div>
+          <div class="corner">&nbsp;</div>
+          <div class="corner">&nbsp;</div>
+          <div class="corner">&nbsp;</div>
+          <p class="pm_title">삼성중공업 리뉴얼</p>
+          <dl>
+            <dt>작업기간</dt>
+            <dd>2024.05.03 - 2024.05.21</dd>
+            <dt>설명</dt>
+            <dd>시총 100대 기업 리뉴얼 팀프로젝트</dd>
+            <dt>기술스택</dt>
+            <dd>HTML5, CSS3, JavaScript, jQuery, Swiper, JS Cookie, GSAP, Font-Awesome, 그누보드</dd>
+          </dl>
+          <ul>
+            <li><a href="http://kimjisu.dothome.co.kr/samsungshi/index.html" title="구현페이지 바로가기" target="_blank">구현<br>페이지</a></li>
+            <li><a href="#" title="기여도">기여도<br>100%</a></li>
+            <li><a href="https://yummy-feta-11c.notion.site/2-5468740d158b46688c7a854917238f00?pvs=4" title="제작과정 바로가기" target="_blank">제작<br>과정</a></li>
+          </ul>
+          <div class="c_point"></div>
+        </div>
+        <div class="lamp_box">
+          <img src="images/pm_lamp.svg" alt="전등이미지">
+        </div>
+        <!-- 닫기 아이콘 -->
+        <i class="fa-solid fa-door-open pm_close modal_close" style="cursor: url('images/cursor.png') 1 1, auto;"></i>
+      </div>
+      <div class="p_inner_modal p_modal2">
+        <img src="images/frame_img2.svg" alt="프로젝트이미지">
+        <div class="p_text_main">
+          <div class="corner">&nbsp;</div>
+          <div class="corner">&nbsp;</div>
+          <div class="corner">&nbsp;</div>
+          <div class="corner">&nbsp;</div>
+          <p class="pm_title">제주독 모바일웹</p>
+          <dl>
+            <dt>작업기간</dt>
+            <dd>2024.06.13 - 2024.06.20</dd>
+            <dt>설명</dt>
+            <dd>여행 모바일 웹 개인 프로젝트</dd>
+            <dt>기술스택</dt>
+            <dd>HTML5, CSS3, Bootstrap, JavaScript, jQuery, Swiper, JS Cookie, pHp, MySQL, Font-Awesome, OpenWeatherMap API</dd>
+          </dl>
+          <ul>
+            <li><a href="http://kimjisu1029.dothome.co.kr/jejudog/" title="구현페이지 바로가기" target="_blank">구현<br>페이지</a></li>
+            <li><a href="#" title="기여도">기여도<br>25%</a></li>
+            <li><a href="https://yummy-feta-11c.notion.site/3-9acb557bed304ae992f64d02c592d4e7?pvs=4" title="제작과정 바로가기" target="_blank">제작<br>과정</a></li>
+          </ul>
+          <div class="c_point"></div>
+        </div>
+        <div class="lamp_box">
+          <img src="images/pm_lamp.svg" alt="전등이미지">
+        </div>
+        <!-- 닫기 아이콘 -->
+        <i class="fa-solid fa-door-open pm_close modal_close" style="cursor: url('images/cursor.png') 1 1, auto;"></i>
+      </div>
+      <div class="p_inner_modal p_modal3">
+        <img src="images/frame_img3.svg" alt="프로젝트이미지">
+        <div class="p_text_main">
+          <div class="corner">&nbsp;</div>
+          <div class="corner">&nbsp;</div>
+          <div class="corner">&nbsp;</div>
+          <div class="corner">&nbsp;</div>
+          <p class="pm_title">LMS 학습지원</p>
+          <dl>
+            <dt>작업기간</dt>
+            <dd>2024.07.02 - 2024.08.13</dd>
+            <dt>설명</dt>
+            <dd>데이터베이스 활용 LMS 팀 프로젝트</dd>
+            <dt>기술스택</dt>
+            <dd>HTML5, SCSS, JavaScript, jQuery, Swiper, JS Cookie, pHp, MySQL, AJAX, Font-Awesome, Googlemaps API</dd>
+          </dl>
+          <ul>
+            <li><a href="http://kimjisu.dothome.co.kr/sfa/" title="구현페이지 바로가기" target="_blank">구현<br>페이지</a></li>
+            <li><a href="#" title="기여도">기여도<br>60%</a></li>
+            <li><a href="https://yummy-feta-11c.notion.site/4-SFA-cd97b816f9c44130a345d438aab4a7fa?pvs=4" title="제작과정 바로가기" target="_blank">제작<br>과정</a></li>
+          </ul>
+          <div class="c_point"></div>
+        </div>
+        <div class="lamp_box">
+          <img src="images/pm_lamp.svg" alt="전등이미지">
+        </div>
+        <!-- 닫기 아이콘 -->
+        <i class="fa-solid fa-door-open pm_close modal_close" style="cursor: url('images/cursor.png') 1 1, auto;"></i>
+      </div>
+      <div class="p_inner_modal p_modal4">
+        <img src="images/frame_img4.svg" alt="프로젝트이미지">
+        <div class="p_text_main">
+          <div class="corner">&nbsp;</div>
+          <div class="corner">&nbsp;</div>
+          <div class="corner">&nbsp;</div>
+          <div class="corner">&nbsp;</div>
+          <p class="pm_title">포트폴리오</p>
+          <dl>
+            <dt>작업기간</dt>
+            <dd>2024.09.12 - 2024.09.13</dd>
+            <dt>설명</dt>
+            <dd>동적인 인터랙션을 강조한 PC 전용 포트폴리오</dd>
+            <dt>기술스택</dt>
+            <dd>HTML5, SCSS, JavaScript, jQuery, Font-Awesome</dd>
+          </dl>
+          <ul>
+            <li><a href="http://kimjisu.dothome.co.kr/portfolio/" title="구현페이지 바로가기" target="_blank">구현<br>페이지</a></li>
+            <li><a href="#" title="기여도">기여도<br>100%</a></li>
+            <li><a href="#" title="제작과정 바로가기" target="_blank">제작<br>과정</a></li>
+          </ul>
+          <div class="c_point"></div>
+        </div>
+        <div class="lamp_box">
+          <img src="images/pm_lamp.svg" alt="전등이미지">
+        </div>
+        <!-- 닫기 아이콘 -->
+        <i class="fa-solid fa-door-open pm_close modal_close" style="cursor: url('images/cursor.png') 1 1, auto;"></i>
+      </div>
+      <div class="p_inner_modal p_modal5">
+        <img src="images/frame_img5.svg" alt="프로젝트이미지">
+        <div class="p_text_main">
+          <div class="corner">&nbsp;</div>
+          <div class="corner">&nbsp;</div>
+          <div class="corner">&nbsp;</div>
+          <div class="corner">&nbsp;</div>
+          <p class="pm_title">리액트 투두리스트</p>
+          <dl>
+            <dt>작업기간</dt>
+            <dd>2024.09.15 - 2024.09.19</dd>
+            <dt>설명</dt>
+            <dd>리액트를 활용한 컴포넌트 기반 구조 투두리스트</dd>
+            <dt>기술스택</dt>
+            <dd>React, CSS3, JavaScript ES6, React-Icons</dd>
+          </dl>
+          <ul>
+            <li><a href="https://kimjisu987.github.io/todolist/" title="구현페이지 바로가기" target="_blank">구현<br>페이지</a></li>
+            <li><a href="#" title="기여도">기여도<br>100%</a></li>
+            <li><a href="https://yummy-feta-11c.notion.site/107f3a26009a807abbc9c0b7ea70661f?pvs=4" title="제작과정 바로가기" target="_blank">제작<br>과정</a></li>
+          </ul>
+          <div class="c_point"></div>
+        </div>
+        <div class="lamp_box">
+          <img src="images/pm_lamp.svg" alt="전등이미지">
+        </div>
+        <!-- 닫기 아이콘 -->
+        <i class="fa-solid fa-door-open pm_close modal_close" style="cursor: url('images/cursor.png') 1 1, auto;"></i>
+      </div>
+    </div>
+
+    <!-- 콘택트 -->
+    <div class="box box5">
+      <div class="house_img" id="house4"></div>
+
+      <!-- 콘택트 모달 -->
+      <div class="contact_box modal4">
+        <div class="box_inner">
+          <div class="background">
+            <h2 class="modal_title">Contact</h2>
+            <div class="name">김지수</div>
+            <div class="text_inner">
+              <div class="c_char_box">
+                <img src="images/char1.png" alt="">
+              </div>
+              <div class="text">
+                <div>
+                  <p><i class="fas fa-envelope-circle-check"></i></p>
+                  <dl>
+                    <dt>이메일 | E-mail</dt>
+                    <dd>jbmyellow@naver.com</dd>
+                  </dl>
+                </div>
+                <div>
+                  <p><i class="fas fa-mobile-screen-button"></i></p>
+                  <dl>
+                    <dt>연락처 | Phone Number</dt>
+                    <dd>010-6637-5153</dd>
+                  </dl>
+                </div>
+                <div>
+                  <p><i class="fab fa-github"></i></p>
+                  <dl>
+                    <dt>깃허브 | GitHub</dt>
+                    <dd>준비중 ...</dd>
+                  </dl>
+                </div>
+                <div>
+                  <p><i class="fas fa-location-dot"></i></p>
+                  <dl>
+                    <dt>거주지 | Address</dt>
+                    <dd>서울시 중랑구</dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact_bottom">
+            <p>UPDATE 20240915</p>
+            <p><i class="fas fa-angle-left"></i><i class="fas fa-angle-left"></i><i class="fas fa-angle-left"></i><i class="fas fa-angle-left"></i><i class="fas fa-angle-left"></i><i class="fas fa-angle-left"></i><i class="fas fa-angle-left"></i><i class="fas fa-angle-left"></i><i class="fas fa-angle-left"></i><i class="fas fa-angle-left"></i></p>
+          </div>
+        </div>
+        
+
+        <!-- 닫기 아이콘 -->
+        <i class="fa-solid fa-door-open contact_close modal_close" style="cursor: url('images/cursor.png') 1 1, auto;"></i>
+      </div>
+    </div>
+
+    <!-- 모달뒷배경 -->
+    <div class="modal_back"></div>
+  </main>
+
+  <!-- 푸터 -->
+  <footer></footer>
+
+  <!-- 스크립트 -->
+  <!-- 제이쿼리 -->
+  <script src="script/jquery-1.12.3.js"></script>
+  <!-- 메인 스크립트 -->
+  <script src="script/main.js"></script>
+</body>
+</html>

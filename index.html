@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>김지수의 포트폴리오</title>
+  <!-- 파비콘 -->
+  <link rel="shortcut icon" type="image/svg" href="images/favicon.svg">
+  <!-- 초기화 -->
+  <link rel="stylesheet" href="css/reset.css" type="text/css">
+  <!-- 메인css -->
+  <link rel="stylesheet" href="css/index.css" type="text/css">
+</head>
+<body>
+  <div class="loadingWrap" id="pc">
+    <div class="loadingText">
+      <span>L</span>
+      <span>O</span>
+      <span>A</span>
+      <span>D</span>
+      <span>I</span>
+      <span>N</span>
+      <span>G</span>
+    </div>
+    <div class="progress">
+      <div class="progressBack"></div>
+      <div class="progressFull"></div>
+    </div>
+    <p class="subText">
+      이 포트폴리오는 1920px X 1080px에 최적화되어 있습니다.<br>
+      <span class="countText"></span>초 후 최적화된 새 창으로 열립니다.
+    </p>
+    <button type="button" class="reload">RELOAD</button>
+  </div>
+  <div id="mobile">
+    <div class="mobileText">
+      <span>S</span>
+      <span>O</span>
+      <span>R</span>
+      <span>R</span>
+      <span>Y</span>
+      <span>.</span>
+      <span>.</span>
+    </div>
+    <p class="mainText">
+      이 포트폴리오는 1920px X 1080px에 최적화되어 있습니다.<br>
+      PC에서 확인해주시기 바랍니다.
+    </p>
+    <button type="button" class="notion" onclick="window.open('https://yummy-feta-11c.notion.site/156f3a26009a803ea178e6d44e33faeb?pvs=4', '_blank');">노션 이력서</button>
+  </div>
+  <script>
+    const pcDiv = document.querySelector("#pc");
+    if (pcDiv && window.getComputedStyle(pcDiv).display !== "none") {
+      goPort();
+    }
+    
+    function goPort() {
+      window.onload = function() {
+          setTimeout(function() {
+              window.open('http://kimjisu.dothome.co.kr/portfolio2/main.html', '김지수의 포트폴리오', 'width=1920,height=1080,location=yes,status=yes,scrollbars=no');
+          }, 4000);
+    
+          setTimeout(function() {
+              document.querySelector(".reload").classList.add("on");
+          }, 4000);
+      }
+      document.querySelector(".reload").addEventListener("click", function(){
+        window.location.reload();
+      });
+    }
+
+    window.addEventListener("resize", function(){
+      window.location.reload();
+    })
+  </script>
+</body>
+</html>
